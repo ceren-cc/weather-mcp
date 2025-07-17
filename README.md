@@ -18,10 +18,6 @@ It supports two tools:
    git clone https://github.com/<your-username>/weather-mcp.git
    cd weather-mcp
 
-To get started, you need to install uv on your computer and make sure FastMCP and httpx are available.
-
-Then, follow these steps to create your project folder and set up the environment:
-
 ---
 
 ## Set up the environment
@@ -39,3 +35,70 @@ Then run the following steps:
 - uv add "mcp[cli]" httpx
 
 ⚠️ Note: These steps require Python version 3.11 to work properly. You may need to install it manually if your system uses a different version.
+
+---
+
+## How to add your MCP Tool to Claude
+1. Open Claude, go to Settings → Developer.
+2. Click on Edit Config.
+3. From the list of files, open claude_desktop_config.json.
+4. Add the following JSON structure to configure the MCP server:
+{
+  "mcpServers": {
+    "Weather": {
+      "command": "<path-to-uv>",
+      "args": [
+        "run",
+        "--with",
+        "mcp[cli]",
+        "mcp",
+        "run",
+        "<path-to-your-main.py>"
+      ]
+    }
+  }
+}
+
+- Replace <path-to-uv> with the full path to your uv binary.
+- Example (on macOS):
+- "/Users/yourname/.local/bin/uv"
+
+- Replace <path-to-your-main.py> with the full path to your main.py file.
+- Example:
+- "/Users/yourname/Projects/weather-mcp/main.py"
+
+5. Save the config file. Claude will now recognize and run your local MCP.
+
+---
+
+## Adding multiple MCP Tools
+If you want to run more than one MCP at the same time, structure your config like this:
+
+{
+  "mcpServers": {
+    "Weather": {
+      "command": "<path-to-uv>",
+      "args": [
+        "run",
+        "--with",
+        "mcp[cli]",
+        "mcp",
+        "run",
+        "<path-to-weather-main.py>"
+      ]
+    },
+    "Sticky Notes": {
+      "command": "<path-to-uv>",
+      "args": [
+        "run",
+        "--with",
+        "mcp[cli]",
+        "mcp",
+        "run",
+        "<path-to-notes-main.py>"
+      ]
+    }
+  }
+}
+
+📌 Tip: If you're unsure about the exact path, use the which uv or realpath main.py command in your terminal.
