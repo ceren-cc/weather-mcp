@@ -43,6 +43,7 @@ Then run the following steps:
 2. Click on Edit Config.
 3. From the list of files, open claude_desktop_config.json.
 4. Add the following JSON structure to configure the MCP server:
+```JSON
 {
   "mcpServers": {
     "Weather": {
@@ -58,14 +59,19 @@ Then run the following steps:
     }
   }
 }
+```
 
 - Replace <path-to-uv> with the full path to your uv binary.
-- Example (on macOS):
-- "/Users/yourname/.local/bin/uv"
+
+Example (on macOS):
+
+"/Users/yourname/.local/bin/uv"
 
 - Replace <path-to-your-main.py> with the full path to your main.py file.
-- Example:
-- "/Users/yourname/Projects/weather-mcp/main.py"
+
+Example:
+
+"/Users/yourname/Projects/weather-mcp/main.py"
 
 5. Save the config file. Claude will now recognize and run your local MCP.
 
@@ -74,6 +80,7 @@ Then run the following steps:
 ## Adding multiple MCP Tools
 If you want to run more than one MCP at the same time, structure your config like this:
 
+```JSON
 {
   "mcpServers": {
     "Weather": {
@@ -100,5 +107,6 @@ If you want to run more than one MCP at the same time, structure your config lik
     }
   }
 }
+```
 
 📌 Tip: If you're unsure about the exact path, use the which uv or realpath main.py command in your terminal.
