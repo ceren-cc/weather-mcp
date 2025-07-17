@@ -9,6 +9,10 @@ from mcp.server.fastmcp import FastMCP
 
 # Inıtialize FastMCP server
 mcp = FastMCP("Weather")
+'''
+    Starts an MCP server named "Weather".
+    Through this server, you can define tools (@mcp.tool()), resources (@mcp.resource()), and prompts (@mcp.prompt()).
+'''
 
 # API Constants
 NWS_API_BASE = "https://api.weather.gov"
