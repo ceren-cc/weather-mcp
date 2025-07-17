@@ -1,3 +1,5 @@
+📌 This project is adapted from the official [Model Context Protocol Quickstart](https://modelcontextprotocol.io/quickstart/server) for learning purposes.
+
 # 🌤️ Weather MCP Tool
 
 This is an MCP (Model Context Protocol) server that provides weather alerts and forecasts using the U.S. National Weather Service API.
