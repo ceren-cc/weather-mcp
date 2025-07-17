@@ -25,13 +25,15 @@ Then, follow these steps to create your project folder and set up the environmen
 ---
 
 ## Set up the environment
+
 To get started, make sure you have uv installed and that your Python version is 3.11.
+And you also need FastMCP and httpx are available.
 Then run the following steps:
-mkdir <folder_name>
-cd <folder_name>
-uv venv --python=3.11
-source .venv/bin/activate
-uv init --no-workspace
-uv add "mcp[cli]" httpx
+- mkdir <folder_name>
+- cd <folder_name>
+- uv venv --python=3.11
+- source .venv/bin/activate
+- uv init --no-workspace
+- uv add "mcp[cli]" httpx
 
 ⚠️ Note: These steps require Python version 3.11 to work properly. You may need to install it manually if your system uses a different version.
